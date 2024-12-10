@@ -64,43 +64,34 @@ var products = [
     }
 ]
 
-// => Reminder, it's extremely important that you debug your code. 
-// ** It will save you a lot of time and frustration!
-// ** You'll understand the code better than with console.log(), and you'll also find errors faster. 
-// ** Don't hesitate to seek help from your peers or your mentor if you still struggle with debugging.
-
-// Improved version of cartList. Cart is an array of products (objects), but each one has a quantity field to define its quantity, so these products are not repeated.
 var cart = [];
 let totalCount = document.getElementById("count_product");
 totalCount.innerHTML = 0;
 
 // Exercise 1
 function buy(id) {
-// 1. Loop for to the array products to get the item to add to cart
-    let i = 0
-    let posicio = -1
-    const alreadyInCart = cart.find(item => item.id === id);
-    let productoEncontrado = 0;
-    let contador = 0;
+
+let i = 0
+let posicio = -1
+const alreadyInCart = cart.find(item => item.id === id);
+let productoEncontrado = 0;
+
     
-    //validaciones
+    
 if (alreadyInCart) {
     if(!alreadyInCart.quantity){
-        alreadyInCart.quantity = 1; // Si no existe la propiedad, inicializarla
+        alreadyInCart.quantity = 1;
     }else{
-        alreadyInCart.quantity++; //Incrementar si ya existe
+        alreadyInCart.quantity++; 
         updateTotalCount();
     }
-    console.log("Cantidad actualizada en el carrito:", alreadyInCart.quantity);
-    //calculateTotal();
-    console.log(cart);
 
     applyPromotionsCart(cart, cart.indexOf(alreadyInCart));
-    return; //Salir de la funcion para evitar duplicados
+    return; 
 }
 
     do {
-        let productoActual = products[i]; // devuele objeto
+        let productoActual = products[i]; 
         let idProductoActual = productoActual.id;
         if(id == idProductoActual){
             posicio = i
@@ -108,18 +99,8 @@ if (alreadyInCart) {
         }
         i++;
     } while( i < products.length && posicio == -1)
-        //contador = productoEncontrado.quantity; // cuando lo encuentra capturo la propiedad cantidad 
-        //console.log(contador);
-        //totalCount.innerHTML = contador;
-           // 2. Add found product to the cart array
+
       cart.push({...productoEncontrado, quantity: 1});
-      
-      
-      
-      console.log(typeof cart);
-      console.log(Array.isArray(cart));
-      console.log(cart.length);
-      
       
       applyPromotionsCart(cart);
       printCart(cart);
@@ -136,35 +117,30 @@ if (alreadyInCart) {
 
 function cleanCart() {
 
-//array vacio
 if(cart.length == 0) return alert ("No hay productos en el carrito");
 
-// eliminar todos los elementos tras el indice 0
 cart.length = 0;
 alert("El carrito ha sido vaciado");
 
 const cartList = document.getElementById("cart_list");
 cartList.innerHTML = "";
-console.log("Carrito despues de vaciar:", cart);
 calculateTotal();
 updateTotalCount();
 }
 
 // Exercise 3
 function calculateTotal() {
-
 let totalPrice = document.getElementById("total_price");
 let total = 0
 
 
-//Errores
-if(cart.length === 0) return totalPrice.innerHTML= "0"; // verificar si el carrito está vacio
+if(cart.length === 0) return totalPrice.innerHTML= "0"; 
 
 for(let i = 0; i < cart.length; i++){
     let productoActual = cart[i];
     let precioAplicable = productoActual.discountedPrice || productoActual.price;
     total += precioAplicable * productoActual.quantity;
-    console.log(precioAplicable);
+    
 }
 
 totalPrice.innerHTML = total.toFixed(2);
@@ -173,21 +149,19 @@ totalPrice.innerHTML = total.toFixed(2);
 
 
 // Exercise 4
+
 function applyPromotionsCart(cart) {
 for (let i = 0; i < cart.length; i++){
     let productoBuscado = cart[i];
     
     if(!productoBuscado.offer || productoBuscado.quantity < productoBuscado.offer.number) {
         productoBuscado.discountedPrice = productoBuscado.price;
-        //console.log(`Para aplicar la oferta necesitas al menos ${productoBuscado.offer.number} unidades. Actualmente tienes ${productoBuscado.quantity}.`);
         continue;
     }
 
-    //if(productoBuscado.offer && productoBuscado.quantity >= productoBuscado.offer.number){
     let discount = (productoBuscado.price * productoBuscado.offer.percent)/ 100;
     productoBuscado.discountedPrice = productoBuscado.price - discount;
         
-    console.log(`Promoción aplicada:${productoBuscado.name} Por comprar ${productoBuscado.quantity} unidades, el precio por unidad baja de $${productoBuscado.price} a $${productoBuscado.discountedPrice.toFixed(2)}.`);
     }  
 
     printCart(cart);
@@ -198,13 +172,10 @@ for (let i = 0; i < cart.length; i++){
 // Exercise 5
 function printCart(cart) {
 
-    //console.log(typeof cart);
-    // Fill the shopping cart modal manipulating the shopping cart dom
+
     const cartList = document.getElementById("cart_list");
     cartList.innerHTML = "";
-    //let discount = applyPromotionsCart(cart);
-    //console.log(discount);
-
+   
 
     for(let index = 0; index < cart.length; index++){
         const row = document.createElement("tr");
@@ -222,7 +193,7 @@ function printCart(cart) {
         const iconsCell = document.createElement("td");
         const plusIcon = document.createElement("i");
         plusIcon.className = "fa-solid fa-plus";
-        plusIcon.style.cursor = "pointer"; // Añade estilo de cursor para hacerlo interactivo
+        plusIcon.style.cursor = "pointer"; 
         plusIcon.onclick = () => buy(cart[index].id);
 
         const minusIcon = document.createElement("i");
@@ -234,13 +205,13 @@ function printCart(cart) {
         const totalCell = document.createElement ("td");
         totalCell.textContent = `${(cart[index].price * cart[index].quantity).toFixed(2)}`;
         
-        //with discount
+        
         const totalCellWithDiscount = document.createElement ("td");
         totalCellWithDiscount.textContent = `$${(cart[index].discountedPrice * cart[index].quantity).toFixed(2)}`;
         
         
         iconsCell.appendChild(minusIcon);
-        iconsCell.appendChild(document.createTextNode(" ")); // Espacio entre íconos
+        iconsCell.appendChild(document.createTextNode(" ")); 
         iconsCell.appendChild(plusIcon);
 
 
@@ -256,7 +227,6 @@ function printCart(cart) {
     
 
 }
-
 
 // ** Nivell II **
 
@@ -275,8 +245,7 @@ product.quantity -= 1;
 cart.splice(productIndex, 1);
 
 }
-console.log(`Producto actualizado/eliminado: ${product.name}`);
-console.log(cart);
+
 applyPromotionsCart(cart);
 printCart(cart);
 
