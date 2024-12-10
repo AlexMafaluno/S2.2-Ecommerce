@@ -1,4 +1,4 @@
-# Sprint 2 IT Academy | Shop
+# Sprint 2.2 Ecommerce
 
 ## Introduction
 
