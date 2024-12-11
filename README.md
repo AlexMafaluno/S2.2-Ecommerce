@@ -1,66 +1,52 @@
 # Sprint 2.2 Ecommerce
 
-## Introduction
+## Introducción
 
-A company in the e-commerce sector has asked us for a web application that allows them to offer the purchase of their products through the internet.
+Este proyecto consiste en el desarrollo de una aplicación web de comercio electrónico que permite a los usuarios interactuar con productos y realizar acciones como agregar productos al carrito, aplicar promociones, y validar formularios de compra. Además, se ha perfeccionado la maquetación visual utilizando CSS y Bootstrap, asegurando una experiencia moderna y responsive.
 
-You will be in charge of setting up an initial demo version of the application for the client: management of the shopping cart and the application of the promotions on the final price. You have 1 week to finish this part of sprint (2.2).
+## Tecnologías Utilizadas
 
-<br>
+HTML: Estructura semántica del proyecto.
 
-## Requirements
+CSS:
+Personalización de estilos para mejorar la identidad visual del e-commerce.
+Uso de animaciones básicas para interactividad.
 
+Bootstrap 5:
+Sistema de grillas para diseño responsive.
+Componentes como botones, formularios y navbar.
 
-1. Clone this repo
-```bash
-$ git clone https://github.com/IT-Academy-BCN/starter-code-frontend-shop
-```
+JavaScript:
+Manipulación dinámica de datos y funcionalidades.
+Validaciones de formularios.
+Interacciones en el carrito de compras.
 
-2. Unlink your repo from the itacademy repository.
-(Explanation: You have to upload the code to your GitHub repository, not to the IT Academy. That's why you have to unlink your project from IT Academy GitHub with the following command)
+## Estructura del Proyecto
 
-```bash
-$ git remote rm origin
-```
+├── /css
+│   ├── styles.css     # Archivo de estilos personalizados
+│   ├── styles.scss    # Archivo SASS utilizado para personalización
+├── /img               # Carpeta de imágenes de productos y elementos visuales
+├── /js
+│   ├── main.js        # Funciones principales (carrito, promociones, validaciones)
+├── index.html         # Página principal del e-commerce
+├── checkout.html      # Página de checkout para validar compras
+└── README.md          # Documentación del proyecto
 
-3. Link your repo to the repository you have to create in your github account
-(Explanation: Now your project is not linked to any remote repository. In order to upload your code, you have to link your project to the new repository created on github.com using the following command)
+## Instalación y Configuración
+Clona el repositorio en tu máquina local:
 
-```bash
-$ git remote add origin <your repo name!>
-```
+bash
+Copiar código
+git clone https://github.com/tuusuario/tu-repositorio-ecommerce.git
+Abre el proyecto en tu editor de texto favorito (recomendado: Visual Studio Code).
 
-<br>
+Instala la extensión Live Server en Visual Studio Code.
 
-## Submission
+Haz clic derecho en el archivo index.html y selecciona "Open with Live Server" para visualizar el proyecto en tu navegador.
 
-1. It is necessary to upload each exercise in a separate commit. The commit name must clearly indicate its content.
+## Capturas de Pantalla
 
-2. Upload the link to your GitHub repository to the virtual campus, enabling your mentor to review and provide feedback.
+# Vista Desktop:
 
-
-
-<br>
-
-## Introduction
-
-The statement of the exercise is available on the virtual campus.
-
-<br>
-
-
-## Instructions
-
-You have the following indications from the frontend manager:
-
-- You have prepared the base of the project on which you will work: https://github.com/IT-Academy-BCN/starter-code-frontend-shop
-
-- The base of the project on which you will work has already created all the files, and an initial version of the interface, so you can focus on programming the logic.
-
-- As at the moment we don't consume data from a server using an API, we will work with hardcoded data in the application. For the moment we will implement the logic using a small group of 9 products divided in 3 sections.
-
-- Except for the last level, showing the result of the functions by console is enough.
-
-- The logic to implement will be placed in the src/grocery.js and src/checkout.js files. You will see that the built in functions have already been created for you to implement them.
-
-- It is forbidden to copy the code, since this way you don't learn anything. Furthermore, as you can see, the second release of sprint 5 is a mini-level test with the mentor, in which you will have to demonstrate live that you have acquired the javascript concepts. Don't worry, if you work on the releases you won't have any problems.
+# Vista Mobile:
