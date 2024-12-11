@@ -6,22 +6,24 @@ Este proyecto consiste en el desarrollo de una aplicación web de comercio elect
 
 ## Tecnologías Utilizadas
 
-HTML: Estructura semántica del proyecto.
+**HTML:** Estructura semántica del proyecto.
 
-CSS:
+**CSS:**
 Personalización de estilos para mejorar la identidad visual del e-commerce.
 Uso de animaciones básicas para interactividad.
 
-Bootstrap 5:
+**Bootstrap 5:**
 Sistema de grillas para diseño responsive.
 Componentes como botones, formularios y navbar.
 
-JavaScript:
+**JavaScript:**
 Manipulación dinámica de datos y funcionalidades.
 Validaciones de formularios.
 Interacciones en el carrito de compras.
 
 ## Estructura del Proyecto
+```bash
+SPRINT 2.2
 
 ├── /css
 │   ├── styles.css     # Archivo de estilos personalizados
@@ -32,13 +34,16 @@ Interacciones en el carrito de compras.
 ├── index.html         # Página principal del e-commerce
 ├── checkout.html      # Página de checkout para validar compras
 └── README.md          # Documentación del proyecto
+```
 
 ## Instalación y Configuración
 Clona el repositorio en tu máquina local:
 
-bash
+```bash
 Copiar código
 git clone https://github.com/tuusuario/tu-repositorio-ecommerce.git
+
+```
 Abre el proyecto en tu editor de texto favorito (recomendado: Visual Studio Code).
 
 Instala la extensión Live Server en Visual Studio Code.
