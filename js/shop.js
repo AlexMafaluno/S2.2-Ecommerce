@@ -46,19 +46,19 @@ var products = [
     },
     {
         id: 7,
-        name: 'Lawn Dress',
+        name: 'Jacket',
         price: 15,
         type: 'clothes'
     },
     {
         id: 8,
-        name: 'Lawn-Chiffon Combo',
+        name: 'Shoes',
         price: 19.99,
         type: 'clothes'
     },
     {
         id: 9,
-        name: 'Toddler Frock',
+        name: 'Trousers',
         price: 9.99,
         type: 'clothes'
     }
@@ -76,8 +76,7 @@ let posicio = -1
 const alreadyInCart = cart.find(item => item.id === id);
 let productoEncontrado = 0;
 
-    
-    
+
 if (alreadyInCart) {
     if(!alreadyInCart.quantity){
         alreadyInCart.quantity = 1;
@@ -86,32 +85,34 @@ if (alreadyInCart) {
         updateTotalCount();
     }
 
-    applyPromotionsCart(cart, cart.indexOf(alreadyInCart));
-    return; 
+applyPromotionsCart(cart, cart.indexOf(alreadyInCart));
+return; 
+
 }
 
-    do {
-        let productoActual = products[i]; 
-        let idProductoActual = productoActual.id;
-        if(id == idProductoActual){
-            posicio = i
-            productoEncontrado = products[posicio];
+do {
+    let productoActual = products[i]; 
+    let idProductoActual = productoActual.id;
+    if(id == idProductoActual){
+         posicio = i
+        productoEncontrado = products[posicio];
         }
-        i++;
+    i++;
     } while( i < products.length && posicio == -1)
 
-      cart.push({...productoEncontrado, quantity: 1});
+    cart.push({...productoEncontrado, quantity: 1});
       
-      applyPromotionsCart(cart);
-      printCart(cart);
-      updateTotalCount();
+    applyPromotionsCart(cart);
+    printCart(cart);
+    updateTotalCount();
 
 }
-    function updateTotalCount() {
+
+function updateTotalCount() {
     const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
     totalCount.innerHTML = totalQuantity;
     printCart(cart);
-    }
+}
 
 // Exercise 2  
 
