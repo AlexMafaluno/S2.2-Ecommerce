@@ -27,10 +27,10 @@ SPRINT 2.2
 
 ├── /css
 │   ├── styles.css     # Archivo de estilos personalizados
-│   ├── styles.scss    # Archivo SASS utilizado para personalización
 ├── /img               # Carpeta de imágenes de productos y elementos visuales
 ├── /js
-│   ├── main.js        # Funciones principales (carrito, promociones, validaciones)
+│   ├── index.js       # Funciones principales (carrito, promociones, validaciones)
+│   ├── checkout.js    # Validación dinámica y personalizada del formulario
 ├── index.html         # Página principal del e-commerce
 ├── checkout.html      # Página de checkout para validar compras
 └── README.md          # Documentación del proyecto
@@ -41,7 +41,7 @@ Clona el repositorio en tu máquina local:
 
 ```bash
 Copiar código
-git clone https://github.com/tuusuario/tu-repositorio-ecommerce.git
+https://github.com/AlexMafaluno/S2.2-Ecommerce.git
 
 ```
 Abre el proyecto en tu editor de texto favorito (recomendado: Visual Studio Code).
