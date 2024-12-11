@@ -52,6 +52,19 @@ Haz clic derecho en el archivo index.html y selecciona "Open with Live Server" p
 
 ## Capturas de Pantalla
 
-# Vista Desktop:
+**Vista Desktop:**
 
-# Vista Mobile:
+![image](https://github.com/user-attachments/assets/c0044d6f-b28b-473f-8544-113922ba764f)
+
+![image](https://github.com/user-attachments/assets/201811e7-2eb9-4379-9add-4b9a981ce2bc)
+
+![image](https://github.com/user-attachments/assets/5b08498f-1aff-45a1-b215-58644fe56854)
+
+**Vista Mobile:**
+
+![image](https://github.com/user-attachments/assets/870be9db-72c5-4567-b677-320bb155539a)
+
+![image](https://github.com/user-attachments/assets/4fe5d8e9-0c58-42a4-962f-1a963d665489)
+
+![image](https://github.com/user-attachments/assets/eea47e35-29ba-488d-b2fd-802e699a243c)
+
